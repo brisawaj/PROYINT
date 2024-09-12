@@ -28,8 +28,8 @@ class Header extends Component {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/favoritos">Favoritos</Link></li>
-                    <li><Link to="/VerTodasTop">Top Peliculas</Link></li>
-                    <li><Link to="/VerTodasUpcoming">Proximos Estrenos</Link></li>
+                    <li><Link to="/top">Top Peliculas</Link></li>
+                    <li><Link to="/upcoming">Proximos Estrenos</Link></li>
                 </ul>
             </div>
             )

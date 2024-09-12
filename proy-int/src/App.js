@@ -1,15 +1,28 @@
 import './App.css';
 import './index.css';
-import {Link, Route, Switch} from 'react-router-dom';
-import Home from './screens/home/home';
+import {Link, Route, Switch, Routes, BrowserRouter} from 'react-router-dom';
+import Home from './screens/Home/Home';
 import Header from './components/Header/Header';
+import NotFound from './screens/NotFound/NotFound';
+import Favoritos from './screens/Favoritos/Favoritos';
+import Top from './screens/Top/Top';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
-       <Header />
-      <Home />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} exact />
+          <Route path="/favoritos" element={<Favoritos/>}  />
+          <Route path="/top" element={<Top/>}  />
+          <Route path="/upcoming" element={<Favoritos/>}  />
+          <Route path="*" element={<NotFound/>}  />
+        </Routes>
+        <Footer/>
+      </div>
+    </BrowserRouter>
   );
 }
 

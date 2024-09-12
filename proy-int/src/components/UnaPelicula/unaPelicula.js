@@ -1,6 +1,6 @@
-import "./unaPelicula.css"
+import "./UnaPelicula.css"
 import react, {Component} from 'react';
-class unaPelicula extends Component {
+class UnaPelicula extends Component {
     constructor(props){
     
         super(props)
@@ -13,7 +13,7 @@ class unaPelicula extends Component {
         console.log(this.state.data)
         return(
             <div> 
-                <h1>{this.state.data.data.title} </h1>
+                <h2>{this.state.data.data.title} </h2>
                 <p>{this.state.data.data.popularity}</p>
             
 
@@ -23,4 +23,4 @@ class unaPelicula extends Component {
     }
 }
   
-  export default unaPelicula;
+  export default UnaPelicula;
