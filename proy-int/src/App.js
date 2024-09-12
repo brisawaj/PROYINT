@@ -7,22 +7,21 @@ import NotFound from './screens/NotFound/NotFound';
 import Favoritos from './screens/Favoritos/Favoritos';
 import Top from './screens/Top/Top';
 import Footer from './components/Footer/Footer';
+import Upcoming from './screens/Upcoming/Upcoming';
 
 function App() {
   return (
-    <BrowserRouter>
       <div className="App">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/favoritos" element={<Favoritos/>}  />
           <Route path="/top" element={<Top/>}  />
-          <Route path="/upcoming" element={<Favoritos/>}  />
+          <Route path="/upcoming" element={<Upcoming/>}  />
           <Route path="*" element={<NotFound/>}  />
         </Routes>
         <Footer/>
       </div>
-    </BrowserRouter>
   );
 }
 
