@@ -1,0 +1,10 @@
+.search-form {
+    float: right; 
+    margin-right: 20px; 
+  }
+
+  .search-form input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }

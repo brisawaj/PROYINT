@@ -17,7 +17,7 @@ const SearchForm = () => {
   };
 
   return (
-    <div className="contenedor-buscador">
+    <div className="search-form">
       <form onSubmit={manejarEnvio}>
         <input
           className="input-buscador"

@@ -1,2 +1,30 @@
-.NotFound-div {text-Align: 'center';
-     margin-Top: '50px';}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+}
+
+h1 {
+  font-size: 3rem;
+  color: #b71c1c; 
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.link {
+  font-size: 1.2rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
