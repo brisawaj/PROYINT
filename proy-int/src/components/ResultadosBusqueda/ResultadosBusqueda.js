@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import './Buscador.css';
+import './ResultadosBusqueda.css';
 
-class Busqueda extends Component {
+class ResultadosBusqueda extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,4 +51,4 @@ class Busqueda extends Component {
   }
 }
 
-export default Busqueda;
+export default ResultadosBusqueda;

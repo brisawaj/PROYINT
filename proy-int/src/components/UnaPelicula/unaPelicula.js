@@ -1,5 +1,6 @@
 import "./UnaPelicula.css"
 import react, {Component} from 'react';
+
 class UnaPelicula extends Component {
     constructor(props){
     
@@ -13,10 +14,8 @@ class UnaPelicula extends Component {
         console.log(this.state.data)
         return(
             <div> 
-                <h2>{this.state.data.data.title} </h2>
+                <h2>{this.state.data.data.name || this.state.data.data.title} </h2>
                 <p>{this.state.data.data.popularity}</p>
-            
-
             
             </div>
         )

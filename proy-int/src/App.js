@@ -8,6 +8,7 @@ import Favoritos from './screens/Favoritos/Favoritos';
 import Top from './screens/Top/Top';
 import Footer from './components/Footer/Footer';
 import Upcoming from './screens/Upcoming/Upcoming';
+import Buscador from './screens/Buscador/Buscador';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/favoritos" element={<Favoritos/>}  />
           <Route path="/top" element={<Top/>}  />
           <Route path="/upcoming" element={<Upcoming/>}  />
+          <Route path="/busqueda/:query" element={<Buscador/>}  />
           <Route path="*" element={<NotFound/>}  />
         </Routes>
         <Footer/>
