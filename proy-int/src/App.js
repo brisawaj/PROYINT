@@ -9,6 +9,7 @@ import Top from './screens/Top/Top';
 import Footer from './components/Footer/Footer';
 import Upcoming from './screens/Upcoming/Upcoming';
 import Buscador from './screens/Buscador/Buscador';
+import ScreenDetallePelicula from './screens/ScreenDetallePelicula/ScreenDetallePelicula';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/top" element={<Top/>}  />
           <Route path="/upcoming" element={<Upcoming/>}  />
           <Route path="/busqueda/:query" element={<Buscador/>}  />
+          <Route path="/pelicula/:id" element={<ScreenDetallePelicula />}  />
           <Route path="*" element={<NotFound/>}  />
         </Routes>
         <Footer/>
