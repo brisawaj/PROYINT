@@ -2,20 +2,14 @@ import "./UnaPelicula.css"
 import react, {Component} from 'react';
 
 class UnaPelicula extends Component {
-    constructor(props){
-    
-        super(props)
-        this.state={data:props}
-        
-    }
     componentDidMount(){
+        console.log('acaaaaa', this.props.data)
     }
     render(){
-        console.log(this.state.data)
         return(
             <div> 
-                <h2>{this.state.data.data.name || this.state.data.data.title} </h2>
-                <p>{this.state.data.data.popularity}</p>
+                <h2>{this.props.data.name || this.props.data.title} </h2>
+                <p>{this.props.data.popularity}</p>
             
             </div>
         )
