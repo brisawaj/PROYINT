@@ -1,1 +1,10 @@
-h1{color: brown;}
+.home-container {
+    padding: 20px;
+}
+
+.movies-section {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    gap: 20px; 
+}

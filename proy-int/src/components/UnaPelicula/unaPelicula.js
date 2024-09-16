@@ -28,7 +28,7 @@ class UnaPelicula extends Component {
 
     render() {
         return (
-            <div>
+            <div className="una-pelicula">
                 <h2 className="titulo">{this.props.pelicula.name || this.props.pelicula.title}</h2>
                 <img className="poster" src={IMAGES_URL + this.props.pelicula.poster_path} />
                 {this.state.show &&
@@ -40,10 +40,10 @@ class UnaPelicula extends Component {
                     } else {
                         this.showDescription()
                     }
-                }}>{this.state.show ? 'Ocultar' : 'Mostrar'}</button>
+                }}>{this.state.show ? 'Ocultar descripcion' : 'Mostrar descripcion'}</button>
                 <button>Agregar a Favoritos</button>
                 <Link to={'/pelicula/533535'}>
-                    Detalle
+                    Ir a detalle
                 </Link>
             </div>
         )

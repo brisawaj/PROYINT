@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import ListaPeliculas from "../../components/ListaPeliculas/ListaPeliculas";
 import "./Home.css"
+import SearchForm from '../../components/SearchForm/SearchForm';
 
 class Home extends Component {
     constructor() {
@@ -36,12 +37,14 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
-                <ListaPeliculas title={"Popular Movies"} loader={this.state.loaderPopular} peliculas={this.state.popular}/> 
-                <ListaPeliculas title={"Top Rated Movies"} loader={this.state.loaderTopRated} peliculas={this.state.topRated}/> 
+            <div className="home-container">
+                <SearchForm />
+                <div className="movies-section">
+                    <ListaPeliculas title={"Popular Movies"} loader={this.state.loaderPopular} peliculas={this.state.popular}/> 
+                    <ListaPeliculas title={"Top Rated Movies"} loader={this.state.loaderTopRated} peliculas={this.state.topRated}/> 
+                </div>
             </div>
         )
     }
 }
-
 export default Home;

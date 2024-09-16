@@ -1,4 +1,3 @@
-
 import UnaPelicula from "../../components/UnaPelicula/UnaPelicula";
 import { Component } from 'react';
 import Loader from "../../components/Loader/Loader";

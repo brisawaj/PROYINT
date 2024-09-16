@@ -19,7 +19,6 @@ class Header extends Component {
                   <li><Link to="/top">Top Peliculas</Link></li>
                   <li><Link to="/upcoming">Proximos Estrenos</Link></li>
               </ul>
-              <SearchForm/>
             </div>
           </div>
             )

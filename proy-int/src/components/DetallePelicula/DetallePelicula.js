@@ -32,8 +32,8 @@ class DetallePelicula extends Component {
         return (
             <div className="PadreDetallePelicula">
                     <div className="DetallePoster">
-                        <img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}/images`}/>
                         <h1>{data.title}</h1>
+                        <img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}/images`}/>
                     </div>
 
                     <div className="DetalleInfo">
