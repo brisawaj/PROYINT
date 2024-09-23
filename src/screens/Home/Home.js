@@ -3,6 +3,8 @@ import ListaPeliculas from "../../components/ListaPeliculas/ListaPeliculas";
 import "./Home.css"
 import SearchForm from '../../components/SearchForm/SearchForm';
 import { getMovies } from '../../utils/movie';
+import Button from '../../components/Button/Button';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
     constructor() {
@@ -30,10 +32,24 @@ class Home extends Component {
             <div className="home-container">
                 <SearchForm />
                 <div className="movies-section">
-                    <ListaPeliculas title={"Popular Movies"} loader={this.state.loaderPopular} peliculas={this.state.popular}/> 
+                    <ListaPeliculas title={"Popular Movies"} loader={this.state.loaderPopular} peliculas={this.state.popular}/>
+                    <div className='load-more-container'>
+                        <Link to="/popular">
+                            <Button className="dark">
+                                Mostrar todas
+                            </Button>
+                        </Link>
+                    </div> 
                 </div>
                 <div className="movies-section">
                     <ListaPeliculas title={"Top Rated Movies"} loader={this.state.loaderTopRated} peliculas={this.state.topRated}/> 
+                    <div className='load-more-container'>
+                        <Link to="/top">
+                            <Button className="dark">
+                                Mostrar todas
+                            </Button>
+                        </Link>
+                    </div> 
                 </div>
             </div>
         )
