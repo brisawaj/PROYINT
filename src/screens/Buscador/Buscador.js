@@ -1,42 +1,53 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { Component } from 'react';
 import UnaPelicula from '../../components/UnaPelicula/UnaPelicula';
 import Loader from '../../components/Loader/Loader';
 import './Buscador.css';
 
-const Buscador = () => {
-  const { query } = useParams();
-  const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(false);
+class Buscador extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      results: [],
+      loading: false,
+      query: new URLSearchParams(this.props.location.search).get('query') || ''
+    };
+  }
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://api.themoviedb.org/3/search/multi?query=${query}&api_key=8942348488014765a582e61cb7357525`)
+  componentDidMount() {
+    this.setState({ loading: true });
+    
+    fetch(`https://api.themoviedb.org/3/search/multi?query=${this.state.query}&api_key=8942348488014765a582e61cb7357525`)
       .then(res => res.json())
       .then(data => {
-        setResults(data.results);
-        console.log('resultados', data.results)
-        setLoading(false);
+        this.setState({
+          results: data.results,
+          loading: false
+        });
       })
-      .catch(e => console.log(e));
-    setLoading(false);
-  }, [query]);
+      .catch(e => {
+        console.log(e);
+        this.setState({ loading: false });
+      });
+  }
 
-  return (
-    <div>
-      <h1>Resultados de búsqueda para: {query}</h1>
-      
-      {(() => {
-        if (loading) {
-          return <Loader/>;
-        } else if (results.length > 0) {
-          return results.map((peli, idx) => <UnaPelicula data={peli} key={idx} />);
-        } else {
-          return <p>No se encontraron resultados</p>;
-        }
-      })()}
-      
-    </div>
-  )};
+  render() {
+    const { results, loading, query } = this.state;
+
+    return (
+      <div>
+        <h1>Resultados de búsqueda para: {query}</h1>
+
+        {loading ? (
+          <Loader />
+        ) : results.length > 0 ? (
+          results.map((peli, idx) => <UnaPelicula data={peli} key={idx} />)
+        ) : (
+          <p>No se encontraron resultados</p>
+        )}
+      </div>
+    );
+  }
+}
+
 export default Buscador;
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Loader from '../Loader/Loader';
-
+import './DetallePelicula.css'
 const peliculaID = 533535
 
 class DetallePelicula extends Component {
@@ -33,7 +33,7 @@ class DetallePelicula extends Component {
             <div className="PadreDetallePelicula">
                     <div className="DetallePoster">
                         <h1>{data.title}</h1>
-                        <img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}/images`}/>
+                        <img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}/>
                     </div>
 
                     <div className="DetalleInfo">

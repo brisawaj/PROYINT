@@ -1,36 +1,39 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { Component } from "react";
 import "./SearchForm.css";
+import { withRouter } from "react-router-dom";
 
-const SearchForm = () => {
-  const [query, setQuery] = useState("");
-  const navigate = useNavigate();
+class SearchForm extends Component {
+  constructor(props){
+    super(props)
+    this.state = {query: ""}
+  }
 
-  const manejarEnvio = (evento) => {
-    evento.preventDefault();
-    navigate(`/busqueda/${query}`);
-    setQuery("");
-  };
+  render(){
+    return (
+      <div className="search-form">
+        <form onSubmit={() => {
+          this.props.history.push({
+            pathname: 'busqueda/',
+            search: `?search=${this.state.query}`
+          })
+        }}>
+          <input
+            className="input-buscador"
+            type="text"
+            onChange= {(e)=>{
+                this.setState({
+                  query: e.target.value
+              })
+            }}
+            value={this.state.query}
+            placeholder="Buscar película..."
+          />
+          <i className="fas fa-search icono-buscador"></i>
+        </form>
+      </div>
+    );
+  }
+}
 
-  const actualizarValor = (evento) => {
-    setQuery(evento.target.value);
-  };
-
-  return (
-    <div className="search-form">
-      <form onSubmit={manejarEnvio}>
-        <input
-          className="input-buscador"
-          type="text"
-          onChange={actualizarValor}
-          value={query}
-          placeholder="Buscar película..."
-        />
-        <i className="fas fa-search icono-buscador"></i>
-      </form>
-    </div>
-  );
-};
-
-export default SearchForm;
+export default withRouter(SearchForm);
 
