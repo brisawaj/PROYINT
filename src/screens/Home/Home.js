@@ -7,8 +7,8 @@ import Button from '../../components/Button/Button';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = { popular: [], topRated: [], loaderTop: true, loaderPopular: true }
     }
 
@@ -30,7 +30,7 @@ class Home extends Component {
     render() {
         return (
             <div className="home-container">
-                <SearchForm />
+                <SearchForm history={this.props.history}/>
                 <div className="movies-section">
                     <ListaPeliculas title={"Popular Movies"} loader={this.state.loaderPopular} peliculas={this.state.popular}/>
                     <div className='load-more-container'>

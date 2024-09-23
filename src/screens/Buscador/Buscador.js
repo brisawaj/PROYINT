@@ -9,14 +9,13 @@ class Buscador extends Component {
     this.state = {
       results: [],
       loading: false,
-      query: new URLSearchParams(this.props.location.search).get('query') || ''
     };
   }
 
   componentDidMount() {
     this.setState({ loading: true });
-    
-    fetch(`https://api.themoviedb.org/3/search/multi?query=${this.state.query}&api_key=8942348488014765a582e61cb7357525`)
+    console.log('QUERY',this.props.location.state.query)
+    fetch(`https://api.themoviedb.org/3/search/multi?query=${this.props.location.state.query}&api_key=8942348488014765a582e61cb7357525`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -31,20 +30,22 @@ class Buscador extends Component {
   }
 
   render() {
-    const { results, loading, query } = this.state;
+    const { results, loading } = this.state;
 
     return (
       <div>
-        <h1>Resultados de búsqueda para: {query}</h1>
-
-        {loading ? (
-          <Loader />
-        ) : results.length > 0 ? (
-          results.map((peli, idx) => <UnaPelicula data={peli} key={idx} />)
-        ) : (
-          <p>No se encontraron resultados</p>
-        )}
+        <h1>Resultados de búsqueda para: {this.props.location.state.query}</h1>
+          <div className="ListaPeliculas_container">
+            {loading ? (
+              <Loader />
+            ) : results.length > 0 ? (
+              results.map((peli, idx) => <UnaPelicula pelicula={peli} key={idx} />)
+            ) : (
+              <p>No se encontraron resultados</p>
+            )}
+          </div>
       </div>
+      
     );
   }
 }

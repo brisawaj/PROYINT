@@ -11,11 +11,9 @@ class SearchForm extends Component {
   render(){
     return (
       <div className="search-form">
-        <form onSubmit={() => {
-          this.props.history.push({
-            pathname: 'busqueda/',
-            search: `?search=${this.state.query}`
-          })
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          this.props.history.push('/busqueda', {query: this.state.query})
         }}>
           <input
             className="input-buscador"
@@ -34,6 +32,5 @@ class SearchForm extends Component {
     );
   }
 }
-
-export default withRouter(SearchForm);
+export default SearchForm;
 
