@@ -13,13 +13,13 @@ class Home extends Component {
     }
 
     componentDidMount() {
-       getMovies('popularity.desc').then(movies => {
+       getMovies('popularity.desc', 1).then(movies => {
            this.setState({
                 popular: movies.slice(0,5),
                 loaderPopular: false,
             })
        })
-       getMovies('vote_average.desc').then(movies => {
+       getMovies('vote_average.desc', 1).then(movies => {
            this.setState({
                 topRated: movies.slice(0, 5),
                 loaderTopRated: false,

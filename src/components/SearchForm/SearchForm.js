@@ -10,7 +10,7 @@ class SearchForm extends Component {
 
   render(){
     return (
-      <div className="search-form">
+      <div className="reset-button">
         <form onSubmit={(e) => {
           e.preventDefault();
           this.props.history.push('/busqueda', {query: this.state.query})

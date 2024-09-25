@@ -14,8 +14,8 @@ class Header extends Component {
               <ul>
                   <li><Link to="/" className="nav-item">Home</Link></li>
                   <li><Link to="/favoritos" className="nav-item">Favoritos</Link></li>
-                  <li><Link to="/top" className="nav-item">Top Peliculas</Link></li>
-                  <li><Link to="/popular" className="nav-item">Popular</Link></li>
+                  <li><Link to="/top" className="nav-item">Top Movies</Link></li>
+                  <li><Link to="/popular" className="nav-item">Popular Movies</Link></li>
               </ul>
             </div>
           </div>

@@ -12,3 +12,14 @@
     border-radius: 5px;
     border: 1px solid #ccc;
   }
+  .reset-button {
+    float: left; 
+    margin-right: 20px; 
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+}
+.home-container{
+flex-direction: column;
+}

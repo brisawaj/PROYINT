@@ -7,15 +7,16 @@ import Button from '../../components/Button/Button';
 class Top extends Component {
     constructor() {
         super()
-        this.state = { top: [], filtroTop: [], filtroValue:'', loaderTop: true }
+        this.state = { top: [], filtroTop: [], filtroValue:'', actualPage: 1, loaderTop: true }
     }
 
     componentDidMount() {
-       getMovies('vote_average.desc').then(movies => {
+       getMovies('vote_average.desc', this.state.actualPage).then(movies => {
            this.setState({
                 top: movies,
                 filtroTop: movies,
                 loaderTop: false,
+                actualPage: this.state.actualPage + 1
             })
        })
     }
@@ -28,15 +29,38 @@ class Top extends Component {
         })
       }
 
+      handleLoadMore(e){
+        getMovies('vote_average.desc', this.state.actualPage).then(movies => {
+            this.setState({
+                 top: this.state.top.concat(movies),
+                 filtroTop: this.state.top.concat(movies),
+                 loaderTop: false,
+                 actualPage: this.state.actualPage + 1
+             })
+        })
+    }
+
+    handleResetFilter(e){
+        this.setState({
+            filtroValue: '',
+            filtroTop: this.state.top
+        })
+    }
+
     render() {
         return (
             <div className="home-container">
+                <div className='reset-button'>
                 <input type='text' className="input-buscador" placeholder="Filtra película..." onChange= {(e)=>this.handleFilterChange(e)}value={this.state.filtroValue}/>
+                <Button onClick={(e)=>this.handleResetFilter(e)} className="dark">
+                    Reset Filter
+                </Button>
+            </div>
                 <div className="movies-section">
                     <ListaPeliculas title={"Top Rated Movies"} loader={this.state.loaderTop} peliculas={this.state.filtroTop}/> 
                 </div>
                 <div className='load-more-container'>
-                    <Button className="dark">
+                    <Button onClick={(e)=>this.handleLoadMore(e)} className="dark">
                         Cargar Mas
                     </Button>
                 </div>

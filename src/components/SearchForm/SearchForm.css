@@ -1,10 +1,19 @@
-.search-form {
+.input-buscador {
+  float: left; 
+  margin-right: 20px; 
+}
+
+.input-buscador input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+  .reset-button {
     float: left; 
     margin-right: 20px; 
-  }
-
-  .search-form input {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
-  }
+    display: flex;
+}
