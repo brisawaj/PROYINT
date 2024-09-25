@@ -2,3 +2,13 @@
     width: 120px;
     margin: 20px auto;
 }
+.input-buscador {
+    float: left; 
+    margin-right: 20px; 
+  }
+
+  .input-buscador input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
