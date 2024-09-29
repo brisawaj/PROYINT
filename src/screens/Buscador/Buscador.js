@@ -14,7 +14,7 @@ class Buscador extends Component {
 
   componentDidMount() {
     this.setState({ loading: true });
-    console.log('QUERY',this.props.location.state.query)
+    
     fetch(`https://api.themoviedb.org/3/search/multi?query=${this.props.location.state.query}&api_key=8942348488014765a582e61cb7357525`)
       .then(res => res.json())
       .then(data => {
@@ -24,7 +24,7 @@ class Buscador extends Component {
         });
       })
       .catch(e => {
-        console.log(e);
+        
         this.setState({ loading: false });
       });
   }

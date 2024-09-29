@@ -1,6 +1,6 @@
 import './App.css';
 import './index.css';
-import {Link, Route, Switch, BrowserRouter} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import Header from './components/Header/Header';
 import NotFound from './screens/NotFound/NotFound';
 import Favoritos from './screens/Favoritos/Favoritos';

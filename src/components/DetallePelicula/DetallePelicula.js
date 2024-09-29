@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Loader from '../Loader/Loader';
 import './DetallePelicula.css'
-const peliculaID = 533535
+
 
 class DetallePelicula extends Component {
     constructor(props) {
@@ -13,13 +13,13 @@ class DetallePelicula extends Component {
     }
 
     componentDidMount (){
-        fetch(`https://api.themoviedb.org/3/movie/${peliculaID}?api_key=7384aa0b23ce68ba408f9921ee711e62`)
+        fetch(`https://api.themoviedb.org/3/movie/${this.props.id}?api_key=7384aa0b23ce68ba408f9921ee711e62`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+        
             this.setState({data: data, loading: false})
         })
-        .catch(e => console.log(e))
+        .catch(e =>{} )
     }
     
     render() {
@@ -33,7 +33,7 @@ class DetallePelicula extends Component {
             <div className="PadreDetallePelicula">
                     <div className="DetallePoster">
                         <h1>{data.title}</h1>
-                        <img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}/>
+                        <img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} alt={data.title}/>
                     </div>
 
                     <div className="DetalleInfo">

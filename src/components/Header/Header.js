@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Header.css"
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-      }
+    
       render( ) {
         return(  
           <div className="header-container">

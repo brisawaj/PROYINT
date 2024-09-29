@@ -7,7 +7,7 @@ export async function getMovies(sortBy, actualPage) {
         return data.results
     })
     .catch((err) => {
-        console.log(err)
+      
         return []
     })
 }

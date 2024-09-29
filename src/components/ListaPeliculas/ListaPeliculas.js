@@ -4,10 +4,7 @@ import Loader from "../../components/Loader/Loader";
 import './ListaPeliculas.css'
 
 class ListaPeliculas extends Component {
-    constructor() {
-
-        super()
-    }
+   
 
     render() {
         return (

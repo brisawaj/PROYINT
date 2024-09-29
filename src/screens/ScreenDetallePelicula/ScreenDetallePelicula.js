@@ -1,8 +1,7 @@
 import React from 'react';
 import { Component} from 'react';
 import DetallePelicula from '../../components/DetallePelicula/DetallePelicula';
-
-const peliculaID = 533535;
+import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 class ScreenDetallePelicula extends Component {
@@ -11,17 +10,15 @@ class ScreenDetallePelicula extends Component {
         this.state = {/* data:null */}
     }
 
-    componentDidMount() {
-        // console.log(this.props.match.params.id)
-    }
+    
     
     render(){
         return(
             <div>
-                <DetallePelicula id={peliculaID}/>
+                <DetallePelicula id={this.props.match.params.id}/>
             </div>
         )
     }
 }
 
-export default ScreenDetallePelicula;
+export default withRouter(ScreenDetallePelicula);
