@@ -27,7 +27,7 @@ class Favoritos extends Component {
         return(
             <div>
                 <h1>Favoritos:</h1>
-                <div className="PadreFavoritos">
+                <div className="ListaPeliculas_container">
                 {this.state.favoritos.length > 0 ?
                 this.state.favoritos.map((elm,idx) =>  <UnaPelicula  pelicula={elm} key= {`${idx}-${elm.name}`}/>):
                 <h1 className="no-favorites">No tenes favoritos</h1>
