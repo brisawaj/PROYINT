@@ -19,7 +19,7 @@ class Buscador extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
-          results: data.results,
+          results: data.results.filter(movie => movie.poster_path),
           loading: false
         });
       })

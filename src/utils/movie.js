@@ -4,7 +4,7 @@ export async function getMovies(sortBy, actualPage) {
         return res.json()
     })
     .then((data) => {
-        return data.results
+        return data.results.filter(img => img.poster_path)
     })
     .catch((err) => {
       

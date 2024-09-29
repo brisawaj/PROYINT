@@ -13,7 +13,7 @@ class DetallePelicula extends Component {
     }
 
     componentDidMount (){
-        fetch(`https://api.themoviedb.org/3/movie/${this.props.id}?api_key=7384aa0b23ce68ba408f9921ee711e62`)
+        fetch(`https://api.themoviedb.org/3/${this.props.mediaType}/${this.props.id}?api_key=7384aa0b23ce68ba408f9921ee711e62`)
         .then(res => res.json())
         .then(data => {
         
@@ -37,9 +37,9 @@ class DetallePelicula extends Component {
                     </div>
 
                     <div className="DetalleInfo">
-                        <p>Rating: {data.popularity}</p>
+                        <p>Rating: {data.vote_average}</p>
                         <p>Estreno: {data.release_date}</p>
-                        <p>Duracion: {data.runtime}</p>
+                        <p>Duracion: {data.runtime + ' min'}</p>
                         <p>Sinopsis: {data.overview}</p>
                         <div className="Generos">Generos: {data.genres.map((elm, idx) => <p>{elm.name}</p>)}
                     </div>
